@@ -1,8 +1,6 @@
-package proyecto1redesfinal;
+package Entidades;
 
 import java.util.Arrays;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import jpcap.packet.EthernetPacket;
 
 import org.icmp4j.IcmpPingRequest;
@@ -12,10 +10,10 @@ import org.icmp4j.IcmpPingUtil;
 public class ICMP
 {
 
-    public static byte[] icmp2(byte[] ipOrigen, byte[] ipDestino, int ttl, int tamMensaje, int protocol, EthernetPacket tramaEthernetII)
+    public static IcmpPingResponse icmpRequest(byte[] ipOrigen, byte[] ipDestino, int ttl, int tamMensaje, int protocol, int checksum, int typeOfService, int version, EthernetPacket tramaEthernetII)
     {
         final IcmpPingRequest request = IcmpPingUtil.createIcmpPingRequest();
-        
+
         request.setHost(Binario.arregloBytesADeci(ipDestino, "."));
         request.setPacketSize(tamMensaje);
         request.setTtl(ttl);
@@ -24,8 +22,7 @@ public class ICMP
 
         if (Arrays.equals(Binario.ipDeciStringAByte(response.getHost().split("\\.")), ipDestino))
         {
-            System.out.println("La duración del echo request es de: " + response.getDuration() + " ms" );
-            return Binario.ipDeciStringAByte(response.getHost().split("\\.")); // retornamos ip host origen del response
+            return response;
         }
         else
         {

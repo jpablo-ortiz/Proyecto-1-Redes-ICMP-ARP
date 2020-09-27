@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Proyecto1RedesFinalInterfaz.jnlp">
+  <information>
+    <title>Proyecto1RedesFinalInterfaz</title>
+    <vendor>LomitoFrito</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Proyecto1RedesFinalInterfaz.jar" size="21268" download="eager" />
+    <jar href="lib\ICMPP.jar" size="192991" download="eager" />
+    <jar href="lib\jna-3.2.5.jar" size="946973" download="eager" />
+    <jar href="lib\jna-platform-win32.jar" size="237034" download="eager" />
+    <jar href="lib\jpcap.jar" size="18372" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="proyecto1redesfinalinterfaz.Proyecto1RedesFinalInterfaz"  name="Proyecto1RedesFinalInterfaz" />
+  <update check="always"/>
+</jnlp>

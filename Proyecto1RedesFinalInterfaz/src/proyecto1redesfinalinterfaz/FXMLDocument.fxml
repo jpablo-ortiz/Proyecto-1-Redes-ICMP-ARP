@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="271.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyecto1redesfinalinterfaz.FXMLDocumentController">
+    <children>
+        <Button fx:id="button" layoutX="208.0" layoutY="219.0" onAction="#pressButton" text="Empezar Construcción Trama" />
+      <ComboBox fx:id="comboBoxT" layoutX="21.0" layoutY="59.0" onAction="#cambioDeTarjetaRed" prefHeight="24.0" prefWidth="545.0" />
+      <TextField fx:id="tTipo" layoutX="359.0" layoutY="105.0" prefHeight="25.0" prefWidth="209.0" />
+      <Text layoutX="24.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite el tipo de trama  (ARP -&gt; 2054) o (IP(ICMP) -&gt; 2048):" wrappingWidth="362.13671875" />
+      <TextField fx:id="tMacOrigen" layoutX="359.0" layoutY="141.0" prefHeight="25.0" prefWidth="209.0" />
+      <Text layoutX="23.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite la dirección MAC del Host Origen (xx:xx:xx:xx:xx:xx):" />
+      <Text layoutX="212.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRAMA ETHERNET II">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="23.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite la direccion Mac del host Destino (xx:xx:xx:xx:xx:xx):" wrappingWidth="303.99609375" />
+      <TextField fx:id="tMacDestino" layoutX="359.0" layoutY="175.0" prefHeight="25.0" prefWidth="209.0" promptText="En ARP recomendado dejar vacío" />
+    </children>
+</AnchorPane>
