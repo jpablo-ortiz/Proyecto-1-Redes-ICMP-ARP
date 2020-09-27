@@ -68,10 +68,10 @@ public class ARPController implements Initializable
         ipDestino = Binario.ipDeciStringAByte(scannerString);
 
         hardType = Short.valueOf(tHardType.getText());
-        prototype = Short.valueOf(tHardType.getText());
-        hardwareLen = Short.valueOf(tHardType.getText());
-        prototypeLen = Short.valueOf(tHardType.getText());
-        operation = Short.valueOf(tHardType.getText());
+        prototype = Short.valueOf(tPrototype.getText());
+        hardwareLen = Short.valueOf(tHardwareLen.getText());
+        prototypeLen = Short.valueOf(tPrototypeLen.getText());
+        operation = Short.valueOf(tOperation.getText());
 
         macDestino = Binario.macVacia;
 
@@ -88,7 +88,6 @@ public class ARPController implements Initializable
                 Stage s = new Stage();
                 s.setScene(new Scene(p));
                 s.show();
-                salir(event);
             }
             else
             {
@@ -119,13 +118,5 @@ public class ARPController implements Initializable
                 break;
             }
         }
-    }
-    
-    @FXML
-    public void salir(ActionEvent event) throws Exception
-    {
-        Node source = (Node) event.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
-        stage.close();
     }
 }

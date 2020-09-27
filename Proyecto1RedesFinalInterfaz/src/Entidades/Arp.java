@@ -6,8 +6,8 @@ import java.util.Arrays;
 import jpcap.JpcapCaptor;
 import jpcap.JpcapSender;
 import jpcap.NetworkInterface;
-import jpcap.packet.ARPPacket;
 import jpcap.packet.EthernetPacket;
+import jpcap.packet.Packet;
 
 public class Arp
 {
@@ -24,56 +24,31 @@ public class Arp
         JpcapSender mensajero = capturador.getJpcapSenderInstance();
 
         // Crear el paquete ARP
-        ARPPacket tramaArp = new ARPPacket()
-        {
-            private static final long serialVersionUID = 1L;
-
-            @Override
-            public String toString()
-            {
-                return " [ Hardware type: " + hardtype + " | Protocol type: " + prototype + " ] "
-                        + " [ Hardware address length: " + hlen + " | Protocol address length: " + plen
-                        + " | Operation code: " + operation + " ] " + " [ Source hardware address: "
-                        + Binario.arregloBytesAHexa(sender_hardaddr, ":") + " ] " + " [ Source protocol address: "
-                        + Binario.arregloBytesADeci(sender_protoaddr, ".") + " ] " + " [ Target hardware address: "
-                        + Binario.arregloBytesAHexa(target_hardaddr, ":") + " ] " + " [ Target protocol address: "
-                        + Binario.arregloBytesADeci(target_protoaddr, ".") + " ] ";
-            }
-        };
-        // Asignar valores a los datos del ARP
-        tramaArp.hardtype = hardType;
-        tramaArp.prototype = prototype;
-        tramaArp.hlen = hardwareLen;
-        tramaArp.plen = prototypeLen;
-        tramaArp.operation = operation; // Esperar respuesta profesor TODO
-        tramaArp.sender_hardaddr = macHostOrigen;
-        tramaArp.sender_protoaddr = ipHostOrigen;
-        tramaArp.target_hardaddr = macHostDestino;
-        tramaArp.target_protoaddr = ipHostDestino;
-
-        // Hacer link de la trama ARP a la trama Ethernet II
-        tramaArp.datalink = tramaEthernetII;
+        PaqueteARP p = new PaqueteARP(macHostOrigen, ipHostOrigen, macHostDestino, ipHostDestino, hardType, prototype, hardwareLen, prototypeLen, operation, tramaEthernetII);
 
         // Enviar el paquete ARP
-        mensajero.sendPacket(tramaArp);
+        mensajero.sendPacket(p.getP());
 
+        long inicio = System.currentTimeMillis();
         // Hacer hasta que no queden mas paquetes o se encuentre el paquete adecuado
         while (true)
         {
             // Capturar los paquetes 1 a 1
-            ARPPacket paquete = (ARPPacket) capturador.getPacket();
+            PaqueteARP aux = new PaqueteARP((Packet) capturador.getPacket());
 
+            long fin = System.currentTimeMillis();
+            double segundosTranscurridos = (double) ((fin - inicio) / 1000);
+            
             // si se deja de recibir paquetes arrojar error
-            if (paquete == null)
+            if (aux.getP() == null || segundosTranscurridos > 10)
             {
                 return null;
             }
 
             // si llega un paquete con el target_protoaddr (ip destino) igual a nuestro IPV4
-            // retornar su MAC de respuesta
-            if (Arrays.equals(paquete.target_protoaddr, ipHostOrigen) && Arrays.equals(paquete.sender_protoaddr, ipHostDestino))
+            if (Arrays.equals(aux.getTargetProtocolAddress(), ipHostOrigen) && Arrays.equals(aux.getSenderProtocolAddress(), ipHostDestino))
             {
-                return paquete.sender_hardaddr; // retornamos mac destino
+                return aux.getSenderHardwareAddress(); // retornamos mac destino
             }
         }
     }

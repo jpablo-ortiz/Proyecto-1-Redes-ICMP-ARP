@@ -91,7 +91,6 @@ public class ICMPController implements Initializable
             alert.setTitle("ICMP Echo reply recibido");
             alert.setContentText("Se recibio el echo reply del host con IP: " + icmpRespuesta.getHost() + "\nLa duración del echo request/replay fue de: " + icmpRespuesta.getDuration() + " ms");
             alert.showAndWait();
-            salir(event);
             System.out.println("Se recibio el echo reply del host con IP: " + icmpRespuesta.getHost() + "\nLa duración del echo request/replay fue de: " + icmpRespuesta.getDuration() + " ms");
         }
         else
@@ -135,14 +134,6 @@ public class ICMPController implements Initializable
         }
         tIpDestino.setText(Binario.arregloBytesADeci(ipDestino, "."));
         tramaEthernetII.dst_mac = macDestino;
-    }
-    
-    @FXML
-    public void salir(ActionEvent event) throws Exception
-    {
-        Node source = (Node) event.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
-        stage.close();
     }
 
 }

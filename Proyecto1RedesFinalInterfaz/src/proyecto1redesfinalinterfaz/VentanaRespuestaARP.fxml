@@ -9,14 +9,14 @@
 
 
 <AnchorPane id="AnchorPane" prefHeight="115.0" prefWidth="324.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="proyecto1redesfinalinterfaz.VentanaRespuestaARPController">
-   <children>
-      <Text fx:id="tRespuesta" layoutX="14.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="La respuesta recibida fue:">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Text>
-      <Text layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arp Replay recibido" />
-      <Button fx:id="bSalir" layoutX="66.0" layoutY="71.0" mnemonicParsing="false" onAction="#salir" text="Salir" />
-      <Button fx:id="bEnviarMensaje" layoutX="141.0" layoutY="71.0" mnemonicParsing="false" onAction="#realizarICMP" text="Enviar mensaje ICMP" />
-   </children>
+    <children>
+        <Text fx:id="tRespuesta" layoutX="14.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="La respuesta recibida fue:">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <Text layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arp Replay recibido" />
+        <Button fx:id="bSalir" layoutX="66.0" layoutY="71.0" mnemonicParsing="false" onAction="#salir" text="Salir" />
+        <Button fx:id="bEnviarMensaje" layoutX="141.0" layoutY="71.0" mnemonicParsing="false" onAction="#realizarICMP" text="Enviar mensaje ICMP" />
+    </children>
 </AnchorPane>

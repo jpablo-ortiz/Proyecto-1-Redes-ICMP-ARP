@@ -25,21 +25,21 @@
         <Text layoutX="22.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Versión:" />
         <Text layoutX="290.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de Servicio:" />
         <TextField fx:id="tTamMensaje" alignment="CENTER" layoutX="239.0" layoutY="215.0" prefHeight="25.0" prefWidth="42.0" text="16" />
-        <TextField fx:id="tProtocolo" alignment="CENTER" editable="false" layoutX="175.0" layoutY="248.0" prefHeight="25.0" prefWidth="26.0" text="1" />
-        <TextField fx:id="tVersion" alignment="CENTER" editable="false" layoutX="71.0" layoutY="248.0" prefHeight="25.0" prefWidth="26.0" text="4" />
-        <TextField fx:id="tTipoServicio" alignment="CENTER" editable="false" layoutX="383.0" layoutY="215.0" prefHeight="25.0" prefWidth="26.0" text="1" />
-        <Button fx:id="button" layoutX="152.0" layoutY="290.0" mnemonicParsing="false" onAction="#pressButton" text="Envíar Mensaje ARP Request" />
-      <Text layoutX="23.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trama Internet Protocol (IP)  " underline="true">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Text>
-      <Text layoutX="23.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trama Internet Protocol (IP)  " underline="true">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Text>
-      <Text layoutX="217.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CheckSum:" />
-      <TextField fx:id="tCheckSum" alignment="CENTER" editable="false" layoutX="282.0" layoutY="248.0" prefHeight="25.0" prefWidth="26.0" text="0" />
+        <TextField fx:id="tProtocolo" alignment="CENTER" layoutX="175.0" layoutY="248.0" prefHeight="25.0" prefWidth="26.0" text="1" />
+        <TextField fx:id="tVersion" alignment="CENTER" layoutX="71.0" layoutY="248.0" prefHeight="25.0" prefWidth="26.0" text="4" />
+        <TextField fx:id="tTipoServicio" alignment="CENTER" layoutX="383.0" layoutY="215.0" prefHeight="25.0" prefWidth="26.0" text="1" />
+        <Button fx:id="button" layoutX="131.0" layoutY="290.0" mnemonicParsing="false" onAction="#pressButton" text="Envíar Mensaje ICMP echo Request" />
+        <Text layoutX="23.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trama Internet Protocol (IP)  " underline="true">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <Text layoutX="23.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trama ICMP  " underline="true">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <Text layoutX="217.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CheckSum:" />
+        <TextField fx:id="tCheckSum" alignment="CENTER" layoutX="282.0" layoutY="248.0" prefHeight="25.0" prefWidth="26.0" text="0" />
     </children>
 </AnchorPane>

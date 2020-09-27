@@ -22,6 +22,7 @@ public class VentanaRespuestaARPController implements Initializable
     private EthernetPacket tramaEthernetII;
     private TarjetaRed tarjetaRed;
     private byte[] macDestino, ipDestino;
+
     @FXML
     private Text tRespuesta;
     @FXML

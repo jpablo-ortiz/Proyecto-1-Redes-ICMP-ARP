@@ -44,7 +44,6 @@ public class FXMLDocumentController implements Initializable
         List<TarjetaRed> array = tr.getTarjetasRed();
         ObservableList<TarjetaRed> observableArrayList = FXCollections.observableArrayList(array);
         comboBoxT.setItems(observableArrayList);
-
     }
 
     public void pressButton(ActionEvent event) throws Exception
@@ -99,13 +98,5 @@ public class FXMLDocumentController implements Initializable
     public void cambioDeTarjetaRed(ActionEvent event) throws Exception
     {
         tMacOrigen.setText(Binario.arregloBytesAHexa(comboBoxT.getValue().getNetworkInterface().mac_address, ":"));
-    }
-    
-    @FXML
-    public void salir(ActionEvent event) throws Exception
-    {
-        Node source = (Node) event.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
-        stage.close();
     }
 }

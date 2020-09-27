@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Proyecto1RedesFinalInterfaz.jar" size="21268" download="eager" />
+    <jar href="Proyecto1RedesFinalInterfaz.jar" size="22588" download="eager" />
     <jar href="lib\ICMPP.jar" size="192991" download="eager" />
     <jar href="lib\jna-3.2.5.jar" size="946973" download="eager" />
     <jar href="lib\jna-platform-win32.jar" size="237034" download="eager" />

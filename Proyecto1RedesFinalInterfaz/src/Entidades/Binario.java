@@ -90,4 +90,19 @@ public class Binario
         }
         return ip;
     }
+
+    public static byte[] shortAByte(short valor)
+    {
+        byte[] res = new byte[2];
+        res[1] = (byte) (valor & 0xff);
+        res[0] = (byte) ((valor >> 8) & 0xff);
+        return res;
+    }
+
+    public static byte[] shortAByteTam1(short valor)
+    {
+        byte[] res = new byte[1];
+        res[0] = (byte) (valor);
+        return res;
+    }
 }
